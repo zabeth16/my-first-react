@@ -1,0 +1,46 @@
+
+@font-face {
+    font-family: Pixel;
+    src: url(../fonts/Cubic_11_1.013_R.woff);
+} 
+
+.title{
+    font-family: Pixel;
+    text-align: center;
+    margin-top: 20px;
+    color: azure;   
+}
+
+.start{
+    font-family: Pixel;
+    border-radius: 15px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../asset/ace.png");
+}
+.penquin{    
+    animation: move 6s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0px); 
+    }
+    20% {
+        transform: translateX(-100px);
+    }
+    40% {
+        transform: translateX(-100px)scaleX(-1);
+    }
+    60%{
+        transform: translateX(-50px)scaleX(-1);
+    }
+    100%{
+        transform: translateX(180px)scaleX(-1);
+    }
+
+}
