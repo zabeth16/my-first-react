@@ -11,13 +11,27 @@ module.exports = {
   },
   // Devserver 設定
   devServer: {
-    contentBase: "./dist"
+    historyApiFallback: true,
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
   },
   module: {
         rules: [
         {
             test: /\.css$/, // 正則式，$ 用以表示以 .css 結尾的檔案，反斜線是跳脫字元
             use: ["style-loader", "css-loader"]
+        },
+        // Babal
+        {
+          test: /\.(js|jsx)$/, // 正則式，$ 用以表示以 .js 或 .jsx 結尾的檔案
+          exclude: /node_modules/, // 排除 node_modules 資料夾
+          use: {
+            loader: "babel-loader", // 使用 babel-loader
+            options: {
+              presets: ["@babel/preset-env", "@babel/preset-react"] // 指定使用的 presets
+            }
+          }
         }
         ]
     }

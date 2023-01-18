@@ -4,30 +4,20 @@ import { BrowserRouter as Router , Route, NavLink } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 import React from "react";
-import  { HomePage }     from "./pages/HomePage.jsx"
-import  { ListPage }   from "./pages/ListPage.jsx"
-// import App from "./App.js";
+import  HomePage  from "./pages/HomePage.jsx"
+import  ListPage  from "./pages/ListPage.jsx"
 
-// 換背景還沒製作要注意
 function App(){
     return(
         <div>
         <Router>
-        <Routes>
+         <Routes>
             <Route path="/"  element={<HomePage />} />
             <Route path="/list" element={<ListPage />} />
-        </Routes>
+         </Routes>
         </Router>
         </div>
     )
 }
-export { App }
 
-createRoot(document.querySelector("#root")).render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-);
-
-
-// ReactDOM.render(<App />, document.getElementById('root'));
+export default App
