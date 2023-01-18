@@ -14,8 +14,17 @@
 .start{
     font-family: Pixel;
     border-radius: 15px;
-}
+    background-color: aliceblue;
+    border: 2px solid #000000;
+    text-decoration: none; 
+    color: #000000; 
+    padding: 5px 10px;
+    margin-top: 50px;
 
+}
+#root{
+    height: 500px;
+}
 body{
     margin: 0;
     padding: 0;
@@ -24,6 +33,7 @@ body{
 .penquin{    
     animation: move 6s linear infinite;
     animation-delay: 1s;
+    overflow-wrap: anywhere;
 }
 
 @keyframes move {

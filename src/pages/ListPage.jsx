@@ -1,4 +1,21 @@
 import { NavLink } from 'react-router-dom';
+import React from "react";
+
+function submit(){
+    const value = document.querySelector("input").value;
+    const messageContainer = document.querySelector(".message-container");
+    const newMessage = document.createElement("div");
+    const deleteMessage = document.createElement("button");
+    deleteMessage.className = "delete";     
+    newMessage.innerText = value;
+    messageContainer.appendChild(newMessage);
+    newMessage.appendChild(deleteMessage);  
+    deleteMessage.innerText = "刪除反動言論";
+    deleteMessage.addEventListener("click", function() {
+        messageContainer.removeChild(newMessage);
+        });   
+};
+
 const ListPage = () => {
     return (
         <div className="list-title">保密防諜人人有責
@@ -42,34 +59,15 @@ const ListPage = () => {
 
             </code>
         </pre>
-        <input type="input" placeholder="革命尚未成功"></input>
-        <button type="submit" class="submit">同志仍須努力</button>
+        <input type="input" placeholder="革命尚未成功" required></input>
+        <button type="submit" className='submit' onClick={submit}>同志仍須努力</button>
         <hr/>
-        <div class="message-container"></div>
-        <NavLink to="/" class="back-home">夢醒淑芬</NavLink>
+        <div className="message-container"></div>
+        <NavLink to="/" className="back-home">夢醒淑芬</NavLink>
 
         </div>
         
     )
 };
 
-
-const submitButton = document.querySelector(".submit")
-submitButton.addEventListener("click",  submit=()=>{
-    
-    const value = document.querySelector("input").value;
-    const messageContainer = document.querySelector(".message-container");
-    const newMessage = document.createElement("div");
-    const deleteMessage = document.createElement("button");
-    deleteMessage.className = "delete";     
-    newMessage.innerText = value;
-    messageContainer.appendChild(newMessage);
-    newMessage.appendChild(deleteMessage);  
-    deleteMessage.innerText = "刪除反動言論";
-    deleteMessage.addEventListener("click", function() {
-        messageContainer.removeChild(newMessage);
-        });   
-    
-});
-
-export {ListPage} ;
+export default ListPage ;
