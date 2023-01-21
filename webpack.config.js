@@ -19,10 +19,16 @@ module.exports = {
   // Devserver 設定
   devServer: {
     // contentBase: path.resolve(__dirname, './dist'),
+    // 讓所有路由都到同個檔案
+    allowedHosts: ['all'],
     historyApiFallback: true,
     static: {
       directory: path.join(__dirname, "dist"),
     },
+  },
+  // 給firestore用的，不然怎麼寫怎麼失敗
+  experiments: {
+    topLevelAwait: true
   },
   module: {
         rules: [
